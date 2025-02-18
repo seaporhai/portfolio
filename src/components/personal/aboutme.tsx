@@ -32,11 +32,14 @@ const AboutMe = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 {/* Profile Image */}
-                <div className="w-full md:w-1/2 h-96 relative rounded-lg overflow-hidden shadow-lg">
+                <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden shadow-lg">
                     <Image
-                        src="/mypic2.jpg" // Replace with your actual image URL
+
+                        src="/image/mypic2.jpg" // Replace with your actual image URL
                         alt="Sea Porhai"
-                        layout="fill"
+                        layout="fixed"
+                        width={600} // Provide fixed width
+                        height={300} // Provide fixed height
                         objectFit="cover"
                     />
                 </div>
@@ -84,7 +87,7 @@ const AboutMe = () => {
             </motion.div>
 
             {/* Contact Form */}
-          <ContactForm></ContactForm>
+            <ContactForm></ContactForm>
         </section>
     );
 };
