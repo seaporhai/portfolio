@@ -31,6 +31,8 @@ const Page = () => {
           }
         />
         <AboutMe ></AboutMe>
+
+        
         <TimelineSection></TimelineSection>
 
 

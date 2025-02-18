@@ -1,8 +1,8 @@
-"use client"
-import React from 'react';
-import { MapPin } from 'lucide-react';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+"use client";
+import React from "react";
+import { MapPin } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const TimelineSection = () => {
   const ref = useRef(null);
@@ -13,15 +13,14 @@ const TimelineSection = () => {
       period: "2022-Present",
       title: "Royal University Of Phnom Penh | Bachelor's Degree",
       location: "Toul Kork, Phnom Penh, Cambodia",
-      side: "left"
+      side: "left",
     },
     {
       period: "2023 - 2024",
       title: "Full Stack Web Development at SabaiCode",
       location: "Chrouy Changvar, Phnom Penh, Cambodia.",
-      side: "right"
+      side: "right",
     },
-
   ];
 
   const containerVariants = {
@@ -29,9 +28,9 @@ const TimelineSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -40,9 +39,9 @@ const TimelineSection = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   const cardVariants = {
@@ -50,16 +49,16 @@ const TimelineSection = () => {
       scale: 1.02,
       boxShadow: "0 10px 20px rgba(0,0,0,0.1)",
       transition: {
-        duration: 0.3
-      }
-    }
+        duration: 0.3,
+      },
+    },
   };
 
   return (
     <section ref={ref} className="py-16 bg-gray-500">
       <div className="max-w-5xl mx-auto px-6">
         {/* Header Section */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
@@ -69,35 +68,44 @@ const TimelineSection = () => {
             Education & Experience
           </h2>
           <p className="text-lg text-white max-w-2xl mx-auto">
-         I want to take all my knowledge that I have learnt into practice and active my skill for more Experience and Knowledge
+            I want to take all my knowledge that I have learnt into practice
+            and active my skill for more Experience and Knowledge
           </p>
         </motion.div>
 
         {/* Timeline Section */}
         <div className="relative">
           {/* Animated timeline line */}
-          <motion.div 
-            className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 -translate-x-1/2"
+          <motion.div
+            className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 -translate-x-1/2 md:block hidden"
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
           />
-          
+
           {/* Timeline Items */}
-          <motion.div 
-            className="space-y-12"
+          <motion.div
+            className="space-y-12 flex flex-col items-center md:block"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
             {timelineItems.map((item, index) => (
-              <motion.div 
-                key={index} 
-                className={`relative flex ${item.side === 'right' ? 'justify-start' : 'justify-end'}`}
+              <motion.div
+                key={index}
+                className={`relative flex w-full ${
+                  item.side === "right" ? "md:justify-start" : "md:justify-end"
+                }`}
                 variants={itemVariants}
               >
-                <div className={`w-5/12 ${item.side === 'right' ? 'ml-auto pl-8' : 'mr-auto pr-8'} relative`}>
-                  <motion.div 
+                <div
+                  className={`w-full md:w-5/12 ${
+                    item.side === "right"
+                      ? "md:ml-auto md:pl-8"
+                      : "md:mr-auto md:pr-8"
+                  } relative`}
+                >
+                  <motion.div
                     className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 cursor-pointer"
                     variants={cardVariants}
                     whileHover="hover"
