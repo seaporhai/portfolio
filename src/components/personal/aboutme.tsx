@@ -48,7 +48,7 @@ const AboutMe = () => {
                 <div className="w-full md:w-1/2 text-center md:text-left">
                     <h2 className="text-4xl font-bold text-foreground mb-4">About Me</h2>
                     <p className="text-muted-foreground text-lg">
-                        I'm Sea Porhai, a passionate Full Stack Developer with experience in
+                        As a Full Stack Developer with experience in
                         React, Next.js, Node.js, database management (SQL, NoSQL) and cloud technologies. I love building
                         efficient and scalable web applications. I developed end-to-end
                         applications with RESTful APIs, honed front-end and back-end integration skills, and collaborated
