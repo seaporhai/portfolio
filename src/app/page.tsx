@@ -3,7 +3,7 @@ import { SkillCard } from "@/components";
 import { Navigation } from "@/components/navbarr";
 import { Skill } from "@/components/type";
 import AboutMe from "@/components/personal";
-import TimelineSection from "./aboutme/page";
+import TimelineSection from "../components/aboutme/page";
 import React from "react";
 
 const skills: Skill[] = [
@@ -32,7 +32,7 @@ const Page = () => {
         />
         <AboutMe ></AboutMe>
 
-        
+
         <TimelineSection></TimelineSection>
 
 
