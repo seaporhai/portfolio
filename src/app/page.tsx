@@ -19,7 +19,7 @@ const skills: Skill[] = [
 
 const categories = ["Frontend", "Backend", "Cloud", "Tools"];
 
-const Page = (text: string) => {
+const Page = () => {
   return (
     <div>
       <div>
