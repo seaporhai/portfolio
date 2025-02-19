@@ -32,7 +32,7 @@ const AboutMe = () => {
                 <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden shadow-lg">
                     <Image
                         src="/image/mypic2.jpg"
-                        alt="Sea Porhai"
+                        alt="Sea Porhaii"
                         layout="fixed"
                         width={600} // Provide fixed width
                         height={300} // Provide fixed height
