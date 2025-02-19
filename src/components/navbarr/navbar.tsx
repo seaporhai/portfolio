@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // Icons for the menu
 
-interface NavigationProps {
-  activeSection?: string;
-  CV_URL?: string;
-}
 
-export const Navigation: React.FC<NavigationProps> = ({
-  activeSection,
-  CV_URL,
+
+export const Navigation: React.FC = ({
+
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -23,43 +19,36 @@ export const Navigation: React.FC<NavigationProps> = ({
     }
   };
   return (
-    <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-40">
+    <nav className="fixed top-0 w-full bg-gray-700 backdrop-blur-md shadow-sm z-40">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-medium text-blue-800 tracking-wide hover:text-blue-600 transition-colors duration-300"
-            style={{ fontFamily: 'Sigmar, cursive' }}
+            className="text-2xl font-medium text-white  w-52 tracking-wide  transition-colors duration-300"
+            
           >
-            SEA PORHAI
+            <p className="flex justify-center">
+            SEA
+            </p>
+            <p className="flex justify-center">
+              PORHAI
+
+            </p>
           </Link>
 
-
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden w-full justify-end md:flex items-center space-x-8 ">
             {["aboutme", "education", "skills", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className={`text-sm font-medium transition-colors duration-300 ${activeSection === item
-                  ? "text-blue-500"
-                  : "text-gray-600 hover:text-blue-500"
-                  }`}
+                className={`text-white `}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </button>
             ))}
-            {CV_URL && (
-              <a
-                href={CV_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-blue-500 hover:text-white transition-colors duration-300"
-              >
-                MY CV
-              </a>
-            )}
+           
           </div>
 
           {/* Mobile Menu Button */}
@@ -81,25 +70,14 @@ export const Navigation: React.FC<NavigationProps> = ({
                   scrollToSection(item);
                   closeMenu();
                 }}
-                className="block w-full text-gray-600 hover:text-blue-500 py-2 text-left"  // Added w-full and text-left for proper alignment
+                className="block w-full text-gray-600 hover:text-blue-500 py-2 text-left" // Added w-full and text-left for proper alignment
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </button>
             ))}
-            {CV_URL && (
-              <a
-                href={CV_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full text-gray-600 hover:text-blue-500 py-2 text-left"
-                onClick={closeMenu}
-              >
-                View CV
-              </a>
-            )}
+           
           </div>
         )}
-
       </div>
     </nav>
   );

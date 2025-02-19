@@ -41,6 +41,7 @@ interface SkillCardProps {
 export const SkillCard: React.FC<SkillCardProps> = ({ category, skills }) => {
     return (
         <motion.div
+            
             className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
             initial="offscreen"
             whileInView="onscreen"
@@ -48,7 +49,7 @@ export const SkillCard: React.FC<SkillCardProps> = ({ category, skills }) => {
             variants={cardVariants}
         >
             <h3 className="text-xl font-bold text-gray-900 mb-6">{category}</h3>
-            <div className="space-y-4">
+            <div  className="space-y-4">
                 {skills
                     .filter((skill) => skill.category === category)
                     .map((skill, index) => (
@@ -61,9 +62,9 @@ export const SkillCard: React.FC<SkillCardProps> = ({ category, skills }) => {
                         >
                             <div className="flex justify-between items-center">
                                 <span className="font-medium">{skill.name}</span>
-                                <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div style={{ fontFamily: "Sigmar, cursive" }} className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
                                     <motion.div
-                                        className="h-full bg-blue-600 rounded-full"
+                                        className="h-full bg-gradient-to-r from-gray-500 to-gray-800 rounded-full"
                                         initial="initial"
                                         whileInView="animate"
                                         viewport={{ once: true }}

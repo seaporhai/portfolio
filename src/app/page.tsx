@@ -23,12 +23,7 @@ const Page = () => {
   return (
     <div>
       {/* Navigation */}
-      <Navigation
-        activeSection={""}
-        CV_URL={
-          "https://drive.google.com/file/d/1UKSllNDKBmVokNBaMNBhPH4SEFb4YYMR/view?usp=drive_link"
-        }
-      />
+      <Navigation />
       <section id="aboutme" className="py-16 px-6 max-w-6xl mx-auto my-10">
         <AboutMe />
       </section>
@@ -48,7 +43,9 @@ const Page = () => {
       </section>
       {/* Footer */}
       <footer className="py-8 bg-gray-900 text-white pt-5">
-        <div className="container mx-auto px-6 text-center">
+        <div
+
+          className="container mx-auto px-6 text-center">
           <p className="text-gray-400">
             © {new Date().getFullYear()} Sea Porhai. All rights reserved.
           </p>
