@@ -16,20 +16,9 @@ const AboutMe = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const images = [
-        "/image/mypic1.jpg", // Replace with actual image paths
-        "/image/mypic2.jpg",
-        "/image/mypic5.jpg",
-    ];
-    const [currentImage, setCurrentImage] = useState(0);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImage((prev) => (prev + 1) % images.length);
-        }, 3000); // Change image every 3 seconds
 
-        return () => clearInterval(interval);
-    }, []);
+
 
     return (
         <section id="about" className="py-16 px-6 max-w-6xl mx-auto my-10">
@@ -42,7 +31,7 @@ const AboutMe = () => {
                 {/* Profile Image */}
                 <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden shadow-lg">
                     <Image
-                        src={images[currentImage]} // Replace with your actual image URL
+                        src="/image/mypic2.jpg"
                         alt="Sea Porhai"
                         layout="fixed"
                         width={600} // Provide fixed width
