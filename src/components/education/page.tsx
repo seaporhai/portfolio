@@ -55,18 +55,18 @@ const TimelineSection = () => {
   };
 
   return (
-    <section ref={ref} className="py-16 bg-gray-50 shadow-lg mb-3 ">
+    <section ref={ref} className="py-16  shadow-lg mb-3 ">
       {/* Header Section */}
       <motion.div
-        className="text-center mb-16 w-5xl  p-6 rounded-xl"
+        className="text-center mb-16 w-5xl  p-6 rounded-xl w-full bg-gradient-to-r from-gray-800 to-gray-900"
         initial={{ opacity: 0, y: -20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-bold text-black mb-4">
+        <h2 className="text-3xl font-bold text-white mb-4 ">
           Education & Experience
         </h2>
-        <p className="text-lg text-black leading-relaxed text-center max-w-2xl mx-auto mb-3">
+        <p className="text-lg text-white leading-relaxed text-center max-w-2xl mx-auto mb-3">
           I want to take all my knowledge that I have learned into practice
           and activate my skills for more Experience and Knowledge.
         </p>
@@ -105,17 +105,19 @@ const TimelineSection = () => {
                     } relative`}
                 >
                   <motion.div
-                    className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 cursor-pointer"
+                    className="relative p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-xl shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+
                     variants={cardVariants}
                     whileHover="hover"
                   >
-                    <div className="text-sm font-medium text-blue-600 mb-2">
+                    <div className="text-sm font-medium text-white mb-2">
                       {item.period}
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-lg font-semibold text-gray-300 mb-2">
                       {item.title}
                     </h3>
-                    <div className="flex items-center text-gray-500 text-sm">
+                    <div className="px-3 py-1 text-sm bg-blue-500/20 text-blue-300 rounded-lg font-medium shadow-sm"
+                    >
                       <MapPin className="w-4 h-4 mr-1" />
                       {item.location}
                     </div>

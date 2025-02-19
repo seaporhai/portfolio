@@ -1,130 +1,101 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { div } from "framer-motion/client";
+
 const AboutMe = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+    return (
+        <div className="">
+            <section id="about" className="py-10 px-6 max-w-[900px] mx-auto ">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-gray-800 p-10 rounded-2xl shadow-lg"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    {/* Profile Image - Left Side */}
+                    <div className="flex justify-center">
+                        <div className="relative w-full h-72 md:h-96 rounded-lg overflow-hidden shadow-xl">
+                            <Image
+                                src="/image/mypic2.jpg"
+                                alt="Sea Porhaii"
+                                layout="fill"
+                                objectFit="cover"
+                                className="hover:scale-105 transition duration-300"
+                            />
+                        </div>
+                    </div>
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+                    {/* About Me - Right Side */}
+                    <div className="flex flex-col justify-start  text-white ">
+                        <h2 className="text-4xl font-extrabold mb-4">About Me</h2>
+                        <p className="text-lg text-gray-300 leading-relaxed">
+                            I’m a <span className="text-white font-semibold">Full Stack Developer</span> skilled in
+                            <span className="text-white font-semibold"> React, Next.js, Node.js, SQL/NoSQL</span>, and cloud technologies.
+                            Passionate about creating <span className="text-white font-semibold">scalable applications</span> with modern UI/UX
+                            and smooth backend integration.
+                        </p>
 
-  return (
-    <section id="about" className="py-16 px-6 max-w-6xl mx-auto my-10">
-      <motion.div
-        className="flex flex-col md:flex-row items-center gap-10"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        {/* Profile Image */}
-        <div className="w-full md:w-1/2 relative rounded-lg overflow-hidden shadow-lg">
-          <Image
-            src="/image/mypic2.jpg"
-            alt="Sea Porhaii"
-            layout="fixed"
-            width={600} // Provide fixed width
-            height={300} // Provide fixed height
-            objectFit="cover"
-            className="transition-opacity duration-500 ease-in-out"
-          />
+                        {/* Skill Badges */}
+                        <div className="flex flex-wrap gap-3 mt-4">
+                            {["React", "Next.js", "Node.js", "SQL", "NoSQL", "REST API", "UI/UX"].map((skill) => (
+                                <span
+                                    key={skill}
+                                    className="px-3 py-1 text-sm font-semibold bg-gray-700 text-white rounded-lg shadow-md"
+                                >
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Personal Info - Below Both Sections */}
+                <div className="flex justify-center w-full mt-10">
+                    <div className="bg-gray-800 p-4 sm:p-6 rounded-lg shadow-lg w-full sm:max-w-full md:w-3/4 lg:w-2/3 text-center">
+                        <h3 className="text-xl font-semibold text-white mb-4">Personal Info</h3>
+
+                        <div className="grid grid-cols-1 gap-3 text-gray-300  ">
+                            {[
+                                { label: "Name", value: "Sea Porhai" },
+                                { label: "Email", value: "seaporhai@gmail.com" },
+                                { label: "Location", value: "Phnom Penh, Cambodia" },
+                                { label: "Phone", value: "061 983 903" },
+                                { label: "Date of Birth", value: "09 / 12 / 2004" },
+                            ].map((info, index) => (
+                                <p key={index} className="flex justify-between bg-gray-700 px-3 py-2 rounded-md text-[12px] md:text-lg ">
+                                    <strong className="text-white">{info.label}:</strong>
+                                    <span>{info.value}</span>
+                                </p>
+                            ))}
+                        </div>
+
+                        {/* Social Links */}
+                        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            {[
+                                { name: "GitHub", link: "https://github.com/seaporhai" },
+                                { name: "LinkedIn", link: "https://www.linkedin.com/in/sea-porhai-208061309/" },
+                                { name: "View CV", link: "https://drive.google.com/file/d/1UKSllNDKBmVokNBaMNBhPH4SEFb4YYMR/view?usp=drive_link" },
+                                { name: "Facebook", link: "https://www.facebook.com/por.hai" },
+                            ].map((item) => (
+                                <a key={item.name} href={item.link} target="_blank" rel="noopener noreferrer">
+                                    <button
+                                        className="w-full px-4 py-2 sm:px-6 sm:py-3 border border-gray-600 bg-gray-700 text-gray-300 rounded-md text-xs sm:text-sm md:text-base
+            transition duration-300 ease-in-out transform hover:bg-gray-600 hover:text-white hover:scale-105 shadow-md text-nowrap"
+                                    >
+                                        {item.name}
+                                    </button>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+            </section>
         </div>
-
-        {/* About Me Info */}
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h2  className="text-4xl font-bold text-foreground mb-4">About Me</h2>
-          <div className="p-6 bg-gray-50 rounded-lg shadow-lg">
-            <p  className="text-lg text-gray-600 leading-relaxed text-justify">
-              As a Full Stack Developer with experience in React, Next.js,
-              Node.js, database management (SQL, NoSQL), and cloud technologies,
-              I love building efficient and scalable web applications. I
-              developed end-to-end applications with RESTful APIs, honed
-              front-end and back-end integration skills, and collaborated
-              effectively using Git.
-            </p>
-          </div>
-
-          <div  className="mt-4 flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-            <a
-              href="https://github.com/seaporhai"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-              
-                className="w-full sm:w-auto px-6 py-3 border-2 border-white 
-                    bg-gradient-to-r from-gray-500 to-gray-800 text-white 
-                    rounded-md sm:text-sm md:text-base whitespace-nowrap 
-                    transition duration-300 ease-in-out transform hover:scale-105 
-                     hover:text-gray-500 hover:border-gray-500 
-                    shadow-lg "
-              >
-                GitHub
-              </button>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/sea-porhai-208061309/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-              
-                className="w-full sm:w-auto px-6 py-3 border-2 border-white 
-                    bg-gradient-to-r from-gray-500 to-gray-800 text-white 
-                    rounded-md sm:text-sm md:text-base whitespace-nowrap 
-                    transition duration-300 ease-in-out transform hover:scale-105 
-                     hover:text-gray-500 hover:border-gray-500 
-                    shadow-lg "
-              >
-                Linked In
-              </button>
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1UKSllNDKBmVokNBaMNBhPH4SEFb4YYMR/view?usp=drive_link/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                
-                className="w-full sm:w-auto px-6 py-3 border-2 border-white 
-                    bg-gradient-to-r from-gray-500 to-gray-800 text-white 
-                    rounded-md sm:text-sm md:text-base whitespace-nowrap 
-                    transition duration-300 ease-in-out transform hover:scale-105 
-                     hover:text-gray-500 hover:border-gray-500 
-                    shadow-lg "
-              >
-                View CV
-              </button>
-            </a>
-            <a
-              href="https://www.facebook.com/por.hai/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button
-                
-                className="w-full sm:w-auto px-6 py-3 border-2 border-white 
-                    bg-gradient-to-r from-gray-500 to-gray-800 text-white 
-                    rounded-md sm:text-sm md:text-base whitespace-nowrap 
-                    transition duration-300 ease-in-out transform hover:scale-105 
-                     hover:text-gray-500 hover:border-gray-500 
-                    shadow-lg "
-              >
-                Facebook
-              </button>
-            </a>
-          </div>
-        </div>
-      </motion.div>
-    </section>
-  );
+    );
 };
 
 export default AboutMe;

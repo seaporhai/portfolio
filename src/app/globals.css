@@ -4,6 +4,8 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Sigmar', cursive, sans-serif !important;
+    font-family: var(--font-poppins), sans-serif;
+    background-color: rgb(186, 186, 186);
+    
   }
   
