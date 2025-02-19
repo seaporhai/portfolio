@@ -12,7 +12,6 @@ const skillBarVariants = {
         }
     })
 };
-
 const cardVariants = {
     offscreen: {
         y: 50,
@@ -42,7 +41,7 @@ interface SkillCardProps {
 export const SkillCard: React.FC<SkillCardProps> = ({ category, skills }) => {
     return (
         <motion.div
-            className="bg-gray-300 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+            className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.3 }}

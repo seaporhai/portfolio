@@ -55,29 +55,30 @@ const TimelineSection = () => {
   };
 
   return (
-    <section ref={ref} className="py-16 bg-gray-500">
-      <div className="max-w-5xl mx-auto px-6">
-        {/* Header Section */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Education & Experience
-          </h2>
-          <p className="text-lg text-white max-w-2xl mx-auto">
-            I want to take all my knowledge that I have learnt into practice
-            and active my skill for more Experience and Knowledge
-          </p>
-        </motion.div>
+    <section ref={ref} className="py-16 bg-gray-50 shadow-lg mb-3 ">
+      {/* Header Section */}
+      <motion.div
+        className="text-center mb-16 w-5xl  p-6 rounded-xl"
+        initial={{ opacity: 0, y: -20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-3xl font-bold text-black mb-4">
+          Education & Experience
+        </h2>
+        <p className="text-lg text-black leading-relaxed text-center max-w-2xl mx-auto mb-3">
+          I want to take all my knowledge that I have learned into practice
+          and activate my skills for more Experience and Knowledge.
+        </p>
+      </motion.div>
 
+
+      <div className="max-w-5xl mx-auto px-6 ">
         {/* Timeline Section */}
         <div className="relative">
           {/* Animated timeline line */}
           <motion.div
-            className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 -translate-x-1/2 md:block hidden"
+            className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-black  -translate-x-1/2 md:block hidden"
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
@@ -93,17 +94,15 @@ const TimelineSection = () => {
             {timelineItems.map((item, index) => (
               <motion.div
                 key={index}
-                className={`relative flex w-full ${
-                  item.side === "right" ? "md:justify-start" : "md:justify-end"
-                }`}
+                className={`relative flex w-full ${item.side === "right" ? "md:justify-start" : "md:justify-end"
+                  }`}
                 variants={itemVariants}
               >
                 <div
-                  className={`w-full md:w-5/12 ${
-                    item.side === "right"
-                      ? "md:ml-auto md:pl-8"
-                      : "md:mr-auto md:pr-8"
-                  } relative`}
+                  className={`w-full md:w-5/12 ${item.side === "right"
+                    ? "md:ml-auto md:pl-8"
+                    : "md:mr-auto md:pr-8"
+                    } relative`}
                 >
                   <motion.div
                     className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 cursor-pointer"
