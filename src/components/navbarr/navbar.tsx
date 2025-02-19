@@ -22,7 +22,6 @@ export const Navigation: React.FC<NavigationProps> = ({
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
-
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-40">
       <div className="container mx-auto px-6 py-4">
@@ -58,7 +57,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-blue-500 hover:text-white transition-colors duration-300"
               >
-                View CV
+                MY CV
               </a>
             )}
           </div>
