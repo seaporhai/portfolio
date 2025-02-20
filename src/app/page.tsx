@@ -86,7 +86,7 @@ const Page = () => {
         <div className="text-center mb-16 w-5xl  p-6 w-full bg-gradient-to-r from-gray-800 to-gray-900">
           <h1 className="text-3xl font-bold text-white  mb-4 ">Project</h1>
           <h1 className="text-lg text-white leading-relaxed text-center max-w-2xl mx-auto mb-3 ">
-            {" "}
+          
             Check out some of the projects I've worked on, showcasing my skills.
           </h1>
         </div>

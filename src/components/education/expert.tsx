@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Briefcase, Calendar, Code } from "lucide-react";
 
 interface Experience {
@@ -36,7 +37,7 @@ const ExperienceCard: React.FC<{ experience: Experience[] }> = ({
             <div className="text-center mb-16 w-5xl  p-6 w-full bg-gradient-to-r from-gray-800 to-gray-900">
                 <h1 className="text-3xl font-bold text-white  mb-4 ">Experience</h1>
                 <h1 className="text-lg text-white leading-relaxed text-center max-w-2xl mx-auto mb-3 ">
-                    
+
                     Passionate about building innovative web applications with a focus on
                     user experience and performance.
                 </h1>
@@ -80,10 +81,11 @@ const ExperienceCard: React.FC<{ experience: Experience[] }> = ({
                                         className="px-3 py-1 text-sm bg-white text-blue-300 rounded-lg font-medium shadow-sm "
                                     >
                                         {techLogos[tech] && (
-                                            <img
+                                            <Image
                                                 src={techLogos[tech]}
                                                 alt={tech}
-
+                                                width={48}
+                                                height={48}
                                                 className="w-12 h-12 object-contain " // Adjust size if needed
                                             />
                                         )}

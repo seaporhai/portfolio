@@ -1,3 +1,4 @@
+import { px } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { FaGithub } from "react-icons/fa"; // Import GitHub icon from react-icons
@@ -31,6 +32,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Top Image / Screenshot with blur effect */}
         <div className="relative rounded-lg overflow-hidden">
           <Image
+           width={500}
+           height={100}
             src={imageUrl}
             alt={title}
             className="object-cover w-full h-auto blur-[2px] hover:blur-none transition-all duration-300"
