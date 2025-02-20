@@ -41,7 +41,7 @@ interface SkillCardProps {
 export const SkillCard: React.FC<SkillCardProps> = ({ category, skills }) => {
     return (
         <div>
-
+           
             <motion.div
 
                 className=" bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl  transition-transform duration-300 hover:scale-[1.02]"

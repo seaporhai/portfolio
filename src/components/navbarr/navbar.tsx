@@ -49,14 +49,24 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-gray-800/60 backdrop-blur-lg shadow-lg z-50">
+    <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg shadow-lg z-50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
-        <Link href="/" className="text-2xl font-semibold text-white tracking-wide">
-          <p className="text-center">SEA</p>
-          <p className="text-center ">PORHAI</p>
+        <Link href="/" className="text-white tracking-wide">
+          <p className="text-center text-xl md:text-xl font-extrabold leading-tight font-serif">
+            <span className="bg-gradient-to-r from-gray-400 to-indigo-200 text-transparent bg-clip-text">
+              SEA
+            </span>
+          </p>
+          <p className="text-center text-xl md:text-xl font-extrabold leading-tight font-serif">
+            <span className="bg-gradient-to-r from-indigo-200 to-gray-400 text-transparent bg-clip-text">
+              PORHAI
+            </span>
+          </p>
         </Link>
+
+
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">

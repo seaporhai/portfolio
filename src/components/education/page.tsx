@@ -58,13 +58,13 @@ const TimelineSection = () => {
     <section ref={ref} className="py-16  shadow-lg mb-3 ">
       {/* Header Section */}
       <motion.div
-        className="text-center mb-16 w-5xl  p-6 rounded-xl w-full bg-gradient-to-r from-gray-800 to-gray-900"
+        className="text-center mb-16 w-5xl  p-6 w-full bg-gradient-to-r from-gray-800 to-gray-900"
         initial={{ opacity: 0, y: -20 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-3xl font-bold text-white mb-4 ">
-          Education & Experience
+          Education 
         </h2>
         <p className="text-lg text-white leading-relaxed text-center max-w-2xl mx-auto mb-3">
           I want to take all my knowledge that I have learned into practice
