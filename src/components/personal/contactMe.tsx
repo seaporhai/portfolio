@@ -58,7 +58,6 @@ const ContactForm = () => {
       <div className="text-center mb-0 w-5xl  p-6 w-full bg-gradient-to-r from-gray-800 to-gray-900">
         <h1 className="text-3xl font-bold text-white  mb-4 ">Contacts Me</h1>
         <h1 className="text-lg text-white leading-relaxed text-center max-w-2xl mx-auto mb-3 ">
-          {" "}
           Feel free to reach out if you'd like to collaborate, have any
           questions, or just want to chat about tech!
         </h1>
