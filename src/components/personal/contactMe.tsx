@@ -1,19 +1,53 @@
+"use client"
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [formData, setFormData] = useState({ names: "", emails: "", messages: "" });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        const { name, value } = e.target;
+        console.log(`Updating ${name}:`, value); // ✅ Debugging Log
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value, // ✅ Dynamically updates the correct field
+        }));
     };
+
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+
+        console.log("Form Data before submission:", formData);
+        const serviceID = "service_82nfqpj"; // Replace with your actual Service ID
+        const templateID = "template_24hrppd"; // Replace with your actual Template ID
+        const userID = "1Qsc40xA7zfUtqtAP"; // Replace with your actual Public Key
+
+        emailjs.send(
+            serviceID,
+            templateID,
+            {
+                from_name: formData.names,
+                reply_to: formData.emails,
+                message: formData.messages,
+                to_name: "Seaporhai", // Your name (Recipient)
+            },
+            userID
+        )
+            .then(response => {
+                console.log("Email sent successfully:", response);
+                alert("Message sent!");
+                setFormData({ names: "", emails: "", messages: "" });
+            })
+            .catch(error => {
+                console.error("Error sending email:", error);
+                alert("Failed to send message.");
+            });
     };
+
+
 
     return (
         <div className="py-16 px-6 max-w-6xl mx-auto">
@@ -79,10 +113,10 @@ const ContactForm = () => {
                                 <label htmlFor="name" className="text-sm font-medium text-gray-700">Your Name</label>
                                 <input
                                     type="text"
-                                    id="name"
-                                    name="name"
+                                    id="names"
+                                    name="names"
                                     placeholder="Enter your name"
-                                    value={formData.name}
+                                    value={formData.names}
                                     onChange={handleChange}
                                     required
                                     className="w-full p-3 bg-[#BABABA] border-gray-500 border rounded-xl   transition placeholder-gray-900"
@@ -93,10 +127,10 @@ const ContactForm = () => {
                                 <label htmlFor="email" className="text-sm font-medium text-gray-700">Email Address</label>
                                 <input
                                     type="email"
-                                    id="email"
-                                    name="email"
+                                    id="emails"
+                                    name="emails"
                                     placeholder="example@gmail.com"
-                                    value={formData.email}
+                                    value={formData.emails}
                                     onChange={handleChange}
                                     required
                                     className="w-full p-3 bg-[#BABABA] border-gray-500 border rounded-xl  transition placeholder-gray-900 "
@@ -106,10 +140,10 @@ const ContactForm = () => {
                             <div className="flex flex-col">
                                 <label htmlFor="message" className="text-sm font-medium text-gray-700">Your Message</label>
                                 <textarea
-                                    id="message"
-                                    name="message"
+                                    id="messages"
+                                    name="messages"
                                     placeholder="Write your message here..."
-                                    value={formData.message}
+                                    value={formData.messages}
                                     onChange={handleChange}
                                     required
                                     className="w-full p-3 bg-[#BABABA] border-gray-500 border rounded-xl   transition placeholder-gray-900"
