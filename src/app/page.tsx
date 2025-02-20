@@ -29,7 +29,7 @@ const experiences = [
     position: "Full-Stack Developer",
     duration: "2023-2024",
     description:
-      "Developed full-stack applications using React, Node.js, and MongoDB. Integrated APIs, optimized performance, and deployed with Docker & AWS.",
+      "Developed full-stack applications using React, Node.js, and MongoDB. Integrated APIs, Dynamic UI, optimized performance, and deployed with Docker & AWS.",
 
     technologies: [
       "React",

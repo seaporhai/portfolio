@@ -45,10 +45,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <FaGithub className="w-6 h-6" /> {/* GitHub Icon */}
           </a>
         </div>
-
         {/* Project Title */}
         <h2 className="mt-4 text-2xl font-bold">{title}</h2>
-
         {/* Card Body (Dynamic children) */}
         <div className="mt-2 text-gray-300 leading-relaxed">{children}</div>
 
