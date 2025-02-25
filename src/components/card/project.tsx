@@ -32,8 +32,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Top Image / Screenshot with blur effect */}
         <div className="relative rounded-lg overflow-hidden">
           <Image
-           width={500}
-           height={100}
+            width={500}
+            height={100}
             src={imageUrl}
             alt={title}
             className="object-cover w-full h-auto blur-[2px] hover:blur-none transition-all duration-300"
@@ -62,10 +62,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 key={tag}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="  px-3 py-1 rounded-md text-sm   hover:border-white hover:border "
+                className="px-3 py-1 rounded-md text-sm hover:outline-gray-600 hover:outline 
+                       transform hover:scale-105 transition duration-200"
               >
                 {tag}
               </a>
+
             ))}
           </div>
         )}

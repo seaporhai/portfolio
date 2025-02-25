@@ -56,12 +56,12 @@ export const Navigation: React.FC = () => {
         <Link href="/" className="text-white tracking-wide">
           <p className="text-center text-xl md:text-xl font-extrabold leading-tight font-serif">
             <span className="bg-gradient-to-r from-gray-400 to-indigo-200 text-transparent bg-clip-text">
-              SEA
+              SEA PORHAI
             </span>
           </p>
           <p className="text-center text-xl md:text-xl font-extrabold leading-tight font-serif">
             <span className="bg-gradient-to-r from-indigo-200 to-gray-400 text-transparent bg-clip-text">
-              PORHAI
+              
             </span>
           </p>
         </Link>

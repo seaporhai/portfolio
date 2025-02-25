@@ -19,7 +19,7 @@ const AboutMe = () => {
                     <div className="flex justify-center">
                         <div className="relative w-full h-72 md:h-96 rounded-lg overflow-hidden shadow-xl">
                             <Image
-                                src="/image/mypic2.jpg"
+                                src="/image/mypic5.JPG"
                                 alt="Sea Porhaii"
                                 layout="fill"
                                 objectFit="cover"
@@ -40,7 +40,7 @@ const AboutMe = () => {
 
                         {/* Skill Badges */}
                         <div className="flex flex-wrap gap-3 mt-4">
-                            {["React", "Next.js", "Node.js", "SQL", "NoSQL", "REST API", "UI/UX"].map((skill) => (
+                            {["UI/UX", "React", "Next.js", "Node.js", "SQL", "NoSQL", "RESTFull API", "Docker", "Mongo DB", "Express.js"].map((skill) => (
                                 <span
                                     key={skill}
                                     className="px-3 py-1 text-sm font-semibold bg-gray-700 text-white rounded-lg shadow-md"

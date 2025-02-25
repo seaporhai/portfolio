@@ -53,20 +53,10 @@ const projects = [
     title: "LearnWithKru",
     tags: ["Next.js", "Tailwind", "Express.js", "MongoDB", "Docker"],
     description:
-      "LearnWithKru is a platform that can connecting students with tutors for personalized learning.",
+      "LearnWithKru is an innovative online platform designed to connect students with experienced tutors for personalized learning. With a strong emphasis on security and trust, the platform ensures a seamless and efficient learning experience through modern technology and user-friendly features.",
   },
-
-  // {
-  //   id: 2,
-  //   project: 'Next Big Thing',
-  //   imageUrl: 'https://via.placeholder.com/600x300/000/fff?text=AnotherProject',
-  //   title: 'Next Big Thing',
-  //   tags: ['#nodejs', '#express', '#typescript'],
-  //   description:
-  //     'This project is the next big thing in web development with blazing-fast performance.',
-  // },
-  // Add more projects as needed...
 ];
+
 
 const categories = ["Frontend", "Backend", "Cloud", "Tools"];
 
@@ -86,34 +76,33 @@ const Page = () => {
         <div className="text-center mb-16 w-5xl  p-6 w-full bg-gradient-to-r from-gray-800 to-gray-900">
           <h1 className="text-3xl font-bold text-white  mb-4 ">Project</h1>
           <h1 className="text-lg text-white leading-relaxed text-center max-w-2xl mx-auto mb-3 ">
-            Check out some of the projects I have worked on, showcasing my skills.
+            Check out some of the projects I have worked on, showcasing my
+            skills.
           </h1>
         </div>
         <div className="mb-14 flex justify-center">
-
+          {/* Project */}
           <ProjectList projects={projects}></ProjectList>
         </div>
       </section>
       {/* Skill Cards */}
-      <section id="skills" >
+      <section id="skills">
         <div className="text-center mb-16 w-5xl  p-6 w-full bg-gradient-to-r from-gray-800 to-gray-900">
           <h1 className="text-3xl font-bold text-white  mb-4 ">Skills</h1>
           <h1 className="text-lg text-white leading-relaxed text-center max-w-2xl mx-auto mb-3 ">
             Skilled in developing dynamic, responsive web applications using
-            modern frameworks, with a strong focus on
-            performance, scalability, and user experience.
+            modern frameworks, with a strong focus on performance, scalability,
+            and user experience.
           </h1>
         </div>
         <div className="container mx-auto px-6 py-12 space-y-8">
-
           {categories.map((category) => (
             <SkillCard key={category} category={category} skills={skills} />
           ))}
         </div>
       </section>
       {/* Contact Form */}
-      <section id="contact">
-      </section>
+      <section id="contact"></section>
       <ContactForm />
       {/* Footer */}
       <footer className="py-8 bg-gray-900 text-white pt-5">

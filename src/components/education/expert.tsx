@@ -25,6 +25,7 @@ const techLogos: { [key: string]: string } = {
     "PostgreSQL": "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
     "JWT": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1tN7ViFoFnhZZKMjeFYa0f6ghtnKBrFCcdg&s",
     "AWS": "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    "Figma" :""
 };
 
 
