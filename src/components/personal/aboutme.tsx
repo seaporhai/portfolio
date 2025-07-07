@@ -77,7 +77,7 @@ const AboutMe = () => {
                             {[
                                 { name: "GitHub", link: "https://github.com/seaporhai" },
                                 { name: "LinkedIn", link: "https://www.linkedin.com/in/sea-porhai-208061309/" },
-                                { name: "View CV", link: "https://drive.google.com/file/d/1UKSllNDKBmVokNBaMNBhPH4SEFb4YYMR/view?usp=drive_link" },
+                                { name: "View CV", link: "https://drive.google.com/file/d/1Kp_Zf81D9mrUhpqjlFImMJ-L3SZHsAm0/view?usp=sharing" },
                                 { name: "Facebook", link: "https://www.facebook.com/por.hai" },
                             ].map((item) => (
                                 <a key={item.name} href={item.link} target="_blank" rel="noopener noreferrer">
