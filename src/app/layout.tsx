@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "SEA PORHAI",
   description: "Full-stack Developer",
-  icons: "/image/mypic2.jpg"
+  icons: "/image/mypic1.JPG",
 };
 
 export default function RootLayout({
