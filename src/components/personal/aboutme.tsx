@@ -19,7 +19,7 @@ const AboutMe = () => {
           <div className="flex justify-center">
             <div className="relative w-full h-72 md:h-96 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/image/mypic2.jpg"
+                src="/image/mypic1.JPG"
                 alt="Sea Porhaii"
                 layout="fill"
                 objectFit="contain"
