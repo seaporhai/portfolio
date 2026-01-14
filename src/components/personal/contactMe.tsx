@@ -58,7 +58,8 @@ const ContactForm = () => {
       <div className="text-center mb-0 w-5xl  p-6 w-full bg-gradient-to-r from-gray-800 to-gray-900">
         <h1 className="text-3xl font-bold text-white  mb-4 ">Contacts Me</h1>
         <h1 className="text-lg text-white leading-relaxed text-center max-w-2xl mx-auto mb-3 ">
-          If you have any Question, Drop them here
+          Please feel free to reach out with any questions, and I will gladly
+          reply.
         </h1>
       </div>
       <div className="py-16 px-6 max-w-6xl mx-auto">
@@ -69,7 +70,6 @@ const ContactForm = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className=" ">
-
             <div className="flex justify-center p-8 ">
               <div>
                 <h1
@@ -149,7 +149,6 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-
         </motion.div>
       </div>
     </div>
